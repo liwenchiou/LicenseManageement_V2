@@ -1,11 +1,15 @@
 @extends('layouts.CRUD')
-@section('title', '主頁')
+@section('title', '首頁')
 @section('content')
     <a class="btn btn-primary" href="{{ route('crud.create') }}">新增</a>
     <table class="table table-hover">
         <thead>
-        <th>標題</th>
-        <th>內容</th>
+        <th>公司別</th>
+        <th>部門別</th>
+        <th>名稱</th>
+        <th>IP</th>
+        <th>授權項目</th>
+        <th>更新時間</th>
         </thead>
         <tbody>
         @foreach ($posts as $post)

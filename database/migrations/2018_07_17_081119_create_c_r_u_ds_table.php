@@ -15,8 +15,11 @@ class CreateCRUDsTable extends Migration
     {
         Schema::create('c_r_u_ds', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('content');
+            $table->string('company');
+            $table->string('company_2');
+            $table->string('name');
+            $table->string('ip');
+            $table->string('type');
             $table->timestamps();
         });
     }

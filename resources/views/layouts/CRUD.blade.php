@@ -14,7 +14,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="crud">IRONMAN</a>
+            <h1><a href="crud">新天地國際實業股份有限公司-資訊軟體授權管理</a></h1>
         </div>
     </div>
 </nav>

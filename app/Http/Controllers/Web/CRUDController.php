@@ -43,7 +43,7 @@ class CRUDController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only('title', 'content');
+        $data = $request->only('company', 'company_2', 'name', 'ip', 'type');
         $post = $this->CRUDRepo->create($data);
         return redirect()->route('crud.show', $post->id);
     }
