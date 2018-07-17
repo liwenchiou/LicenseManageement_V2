@@ -14,8 +14,12 @@
         <tbody>
         @foreach ($posts as $post)
             <tr onclick="window.location = '{{ route('crud.show', $post->id) }}'">
-                <td>{{ $post->title }}</td>
-                <td>{{ $post->content }}</td>
+                <td>{{ $post->company }}</td>
+                <td>{{ $post->company_2 }}</td>
+                <td>{{ $post->name }}</td>
+                <td>{{ $post->ip }}</td>
+                <td>{{ $post->type }}</td>
+                <td>{{ $post->created_at }}</td>
             </tr>
         @endforeach
         </tbody>
