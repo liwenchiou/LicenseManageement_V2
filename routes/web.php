@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('crud.index');
 });
+
+Route::resource('crud', 'Web\CRUDController');
