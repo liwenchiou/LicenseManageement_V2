@@ -81,10 +81,10 @@ class CRUDController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->only('title', 'content');
+        $data = $request->only('company', 'company_2', 'name', 'ip', 'type');
         $post = $this->CRUDRepo->update($id, $data);
         if ($post) {
-            return redirect()->route('crud.show', $id);
+            return redirect()->route('crud.index', $id);
         }
         return redirect()->route('crud.index');
     }

@@ -10,4 +10,5 @@ class CRUD extends Model
     protected $fillable = [
         'company', 'company_2','name','ip','type',
     ];
+
 }
