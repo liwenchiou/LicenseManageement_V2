@@ -6,7 +6,6 @@
     <div>{{ $post->name }}</div>
     <div>{{ $post->ip }}</div>
     <div>{{ $post->type }}</div>
-    <a class="btn btn-default" href="{{ route('crud.index') }}">返回</a>
     <a class="btn btn-primary" href="{{ route('crud.edit', $post->id) }}">編輯</a>
     <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">刪除</button>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

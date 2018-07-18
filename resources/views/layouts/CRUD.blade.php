@@ -14,10 +14,11 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <h1><a href="crud">新天地國際實業股份有限公司-資訊軟體授權管理</a></h1>
+            <h3><a href="{{route('crud.index')}}">新天地國際實業股份有限公司-資訊軟體授權管理</a></h3>
         </div>
     </div>
 </nav>
+<br>
 <div class="container-fluid">
     @yield('content')
 </div>

@@ -5,14 +5,17 @@ namespace App\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\CRUDRepository;
+use App\Repositories\company2Repository;
 
 class CRUDController extends Controller
 {
-    protected $CRUDRepo;
+    protected $CRUDRepo,$companyRepo;
 
-    public function __construct(CRUDRepository $CRUDRepo) {
+    public function __construct(CRUDRepository $CRUDRepo,company2Repository $companyRepo) {
         $this->CRUDRepo = $CRUDRepo;
+        $this->companyRepo = $companyRepo;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -31,8 +34,8 @@ class CRUDController extends Controller
      */
     public function create()
     {
-//        return '123qwe';
-        return view('crud.create');
+        $company_post = $this->companyRepo->index();
+        return view('crud.create', ['company_post' => $company_post]);
     }
 
     /**
@@ -45,7 +48,7 @@ class CRUDController extends Controller
     {
         $data = $request->only('company', 'company_2', 'name', 'ip', 'type');
         $post = $this->CRUDRepo->create($data);
-        return redirect()->route('crud.show', $post->id);
+        return redirect()->route('crud.index', $post->id);
     }
 
     /**
@@ -97,7 +100,7 @@ class CRUDController extends Controller
      */
     public function destroy($id)
     {
-        $result = $this->CRUDRepo->delete($id);
+        $this->CRUDRepo->delete($id);
         return redirect()->route('crud.index');
     }
 }
