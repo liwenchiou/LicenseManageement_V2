@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
 <nav class="navbar navbar-default">
     <img src="{{ asset('image/logo.jpg') }}">
     {{--<div align="left" style="float:left" style="background-image:url({{ asset('image/logo.jpg') }});"></div>--}}
