@@ -20,6 +20,7 @@ class CreateCRUDsTable extends Migration
             $table->string('name');
             $table->string('ip');
             $table->string('type');
+            $table->string('comm');
             $table->timestamps();
         });
     }

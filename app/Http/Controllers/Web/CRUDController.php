@@ -6,14 +6,16 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\CRUDRepository;
 use App\Repositories\company2Repository;
+use App\Repositories\lisenceRepository;
 
 class CRUDController extends Controller
 {
-    protected $CRUDRepo,$companyRepo;
+    protected $CRUDRepo,$companyRepo,$lisenceRepo;
 
-    public function __construct(CRUDRepository $CRUDRepo,company2Repository $companyRepo) {
+    public function __construct(CRUDRepository $CRUDRepo,company2Repository $companyRepo,lisenceRepository $lisenceRepo) {
         $this->CRUDRepo = $CRUDRepo;
         $this->companyRepo = $companyRepo;
+        $this->lisenceRepo = $lisenceRepo;
     }
 
     /**
@@ -23,8 +25,8 @@ class CRUDController extends Controller
      */
     public function index()
     {
-        $posts = $this->CRUDRepo->index();
-        return view('crud.index', ['posts' => $posts]);
+        $crud_posts = $this->CRUDRepo->index();
+        return view('crud.index', ['crud_posts' => $crud_posts]);
     }
 
     /**
@@ -35,7 +37,8 @@ class CRUDController extends Controller
     public function create()
     {
         $company_post = $this->companyRepo->index();
-        return view('crud.create', ['company_post' => $company_post]);
+        $lisence_post = $this->lisenceRepo->index();
+        return view('crud.create', ['company_post' => $company_post,'lisence_post' => $lisence_post]);
     }
 
     /**
@@ -46,9 +49,9 @@ class CRUDController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only('company', 'company_2', 'name', 'ip', 'type');
-        $post = $this->CRUDRepo->create($data);
-        return redirect()->route('crud.index', $post->id);
+        $data = $request->only('company', 'company_2', 'name', 'ip', 'type','comm');
+        $crud_post = $this->CRUDRepo->create($data);
+        return redirect()->route('crud.index', $crud_post->id);
     }
 
     /**
@@ -59,8 +62,8 @@ class CRUDController extends Controller
      */
     public function show($id)
     {
-        $post = $this->CRUDRepo->find($id);
-        return view('crud.show', ['post' => $post]);
+        $crud_post = $this->CRUDRepo->find($id);
+        return view('crud.show', ['crud_post' => $crud_post]);
     }
 
     /**
@@ -71,8 +74,10 @@ class CRUDController extends Controller
      */
     public function edit($id)
     {
-        $post = $this->CRUDRepo->find($id);
-        return view('crud.edit', ['post' => $post]);
+        $crud_post = $this->CRUDRepo->find($id);
+        $company_post = $this->companyRepo->index();
+        $lisence_post = $this->lisenceRepo->index();
+        return view('crud.edit', ['crud_post' => $crud_post,'company_post' => $company_post,'lisence_post' => $lisence_post]);
     }
 
     /**
@@ -84,9 +89,9 @@ class CRUDController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->only('company', 'company_2', 'name', 'ip', 'type');
-        $post = $this->CRUDRepo->update($id, $data);
-        if ($post) {
+        $data = $request->only('company', 'company_2', 'name', 'ip', 'type','comm');
+        $crud_post = $this->CRUDRepo->update($id, $data);
+        if ($crud_post) {
             return redirect()->route('crud.index', $id);
         }
         return redirect()->route('crud.index');

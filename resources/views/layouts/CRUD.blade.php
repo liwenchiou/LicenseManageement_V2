@@ -12,9 +12,11 @@
 
 <body>
 <nav class="navbar navbar-default">
+    <img src="{{ asset('image/logo.jpg') }}">
+    {{--<div align="left" style="float:left" style="background-image:url({{ asset('image/logo.jpg') }});"></div>--}}
     <div class="container-fluid">
-        <div class="navbar-header">
-            <h3><a href="{{route('crud.index')}}">新天地國際實業股份有限公司-資訊軟體授權管理</a></h3>
+        <div class="navbar-header" style="margin: 0px auto;">
+            <h1><a href="{{route('crud.index')}}" style="font-family:Microsoft JhengHei;">新天地國際實業股份有限公司-資訊軟體授權管理V2</a></h1>
         </div>
     </div>
 </nav>
