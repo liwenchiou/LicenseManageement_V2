@@ -13,7 +13,8 @@
 <body>
 
 <nav class="navbar navbar-default">
-    <img src="{{ asset('image/logo.jpg') }}">
+    <div><img src="{{ asset('image/logo.jpg') }}"></div>
+
     {{--<div align="left" style="float:left" style="background-image:url({{ asset('image/logo.jpg') }});"></div>--}}
     <div class="container-fluid">
         <div class="navbar-header" style="margin: 0px auto;">
@@ -21,6 +22,7 @@
         </div>
     </div>
 </nav>
+
 <br>
 <div class="container-fluid">
     @yield('content')

@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::resource('crud', 'Web\CRUDController');
 Route::resource('company', 'Web\CompanyController');
 Route::resource('lisence', 'Web\LisenceController');
+
+Route::resource('event', 'Web\EventController');

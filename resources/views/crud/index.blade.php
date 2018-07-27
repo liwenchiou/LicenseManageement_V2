@@ -1,7 +1,8 @@
 @extends('layouts.CRUD')
 @section('title', '首頁')
 @section('content')
-    <div align="left" style="float:left"><a class="btn btn-primary" href="{{ route('crud.create') }}" style="font-size: 18px;font-family:Microsoft JhengHei;">新增授權</a></div>
+    <div align="left" style="float:left"><a class="btn btn-primary" href="{{ route('crud.create') }}" style="font-size: 18px;font-family:Microsoft JhengHei;">新增授權</a>
+        <a class="btn btn-primary" href="{{ route('event.index') }}" style="font-size: 18px;font-family:Microsoft JhengHei;">行事曆</a></div>
     <div align="right"><a class="btn btn-primary" href="{{ route('company.index') }}"style="font-size: 18px;font-family:Microsoft JhengHei;">公司管理</a>
     <a class="btn btn-primary" href="{{ route('lisence.index') }}"style="font-size: 18px;font-family:Microsoft JhengHei;">授權項目管理</a></div>
     <br><br>
