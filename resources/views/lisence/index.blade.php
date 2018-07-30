@@ -2,7 +2,7 @@
 @section('title', '首頁')
 @section('content')
     {{--'lisence_en', 'lisence_cn', 'lisence_code','lisence_num'--}}
-    <a class="btn btn-primary" href="{{ route('lisence.create') }}" style="font-size: 18px;font-family:Microsoft JhengHei;">新增授權項目</a>
+    {{--<a class="btn btn-primary" href="{{ route('lisence.create') }}" style="font-size: 18px;font-family:Microsoft JhengHei;">新增授權項目</a>--}}
     <br><br>
     <table class="table table-hover" style="font-size: 18px;font-family:Microsoft JhengHei;">
         <thead>

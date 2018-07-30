@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect()->route('crud.index');
+    return redirect()->route('event.index');
 });
 
 Route::resource('crud', 'Web\CRUDController');

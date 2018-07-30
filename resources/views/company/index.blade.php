@@ -1,7 +1,7 @@
 @extends('layouts.CRUD')
 @section('title', '首頁')
 @section('content')
-    <a class="btn btn-primary" href="{{ route('company.create') }}" style="font-size: 18px;font-family:Microsoft JhengHei;">新增公司</a>
+    {{--<a class="btn btn-primary" href="{{ route('company.create') }}" style="font-size: 18px;font-family:Microsoft JhengHei;">新增公司</a>--}}
     <br><br>
     <table class="table table-hover" style="font-size: 18px;font-family:Microsoft JhengHei;">
         <thead>
